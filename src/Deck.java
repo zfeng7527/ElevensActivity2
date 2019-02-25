@@ -22,7 +22,7 @@ public class Deck {
      * The next card to be dealt is at size - 1.
      */
     private int size;
-
+    List<String> deckList = new ArrayList<String>();
 
     /**
      * Creates a new <code>Deck</code> instance.<BR>
@@ -33,16 +33,16 @@ public class Deck {
      * @param values is an array containing all of the card point values.
      */
     public Deck(String[] ranks, String[] suits, int[] values) {
-		        List<String> deckList = new ArrayList<String>();
-    for(int rank = 0;rank<ranks.length;rank++){
-        for (int suit = 0;suit<suits.length;rank++){
-            for (int value : values){
-                String card = ranks[rank] + suits[suit] + values[value];
-                deckList.set(0,card);
-            }
+        //List<String> deckList = new ArrayList<String>();
+        for(int rank = 0;rank<ranks.length;rank++){
+            for (int suit = 0;suit<suits.length;rank++){
+                for (int value : values){
+                    String card = ranks[rank]+ ", " + suits[suit] + ", " + values[value];
+                    deckList.set(0,card);
+                }
 
-    }
-    }
+            }
+        }
     }
 
 
@@ -51,7 +51,10 @@ public class Deck {
      * @return true if this deck is empty, false otherwise.
      */
     public boolean isEmpty() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		if(deckList.size()==0){
+		    return true;
+        }
+        return false;
     }
 
     /**
@@ -59,7 +62,7 @@ public class Deck {
      * @return the number of undealt cards in this deck.
      */
     public int size() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        return deckList.size();
     }
 
     /**
@@ -76,7 +79,11 @@ public class Deck {
      *         previously dealt.
      */
     public Card deal() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		List<String> dealList = new ArrayList<String>();
+		if(isEmpty()){
+		    return null;
+        }
+        return deckList.get(0);
     }
 
     /**
