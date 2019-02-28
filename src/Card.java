@@ -1,13 +1,6 @@
 /**
  * Created by Teacher on 1/7/2019.
  */
-public class    Card {
-
-    /**
-     * Card.java
-     *
-     * <code>Card</code> represents a playing card.
-     */
     public class Card {
 
         /**
@@ -37,7 +30,9 @@ public class    Card {
          *                       containing the point value of the card
          */
         public Card(String cardRank, String cardSuit, int cardPointValue) {
-            Card card = new Card(cardRank,cardSuit,cardPointValue);
+          this.rank=cardRank;
+          this.suit=cardSuit;
+          this.pointValue=cardPointValue;
         }
 
 
@@ -77,7 +72,7 @@ public class    Card {
          * false otherwise.
          */
         public boolean matches(Card otherCard) {
-            if(otherCard.equals(Card.card)){
+            if(rank.equals(otherCard.rank)&&suit.equals(otherCard.suit) && (pointValue==(otherCard.pointValue))){
                 return true;
             }
             return false;
