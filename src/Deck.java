@@ -32,14 +32,22 @@ public class Deck {
      * @param values is an array containing all of the card point values.
      */
     public Deck(String[] ranks, String[] suits, int[] values) {
-        cards= new ArrayList<Card>();
-        for(int rank = 0;rank<ranks.length;rank++){
-            for (int suit = 0;suit<suits.length;rank++){
-                for (int value : values){
+       /* cards= new ArrayList<Card>();
+        for(int rank = 0;rank<=ranks.length-1;rank++){
+            for (int suit = 0;suit<=suits.length-1;rank++){
+                for (int value = 0; value <= ranks.length-1; value++){
                     cards.add(new Card(ranks[rank],suits[suit],values[value]));
                 }
             }
+        }*/
+
+        cards = new ArrayList<Card>();
+        for (int j = 0; j < ranks.length; j++) {
+            for (String suitString : suits) {
+                cards.add(new Card(ranks[j], suitString, values[j]));
+            }
         }
+        shuffle();
     }
 
 
@@ -68,7 +76,7 @@ public class Deck {
      */
     public void shuffle() {
         Card holder;
-		for(int i=0;i<cards.size();i++){
+		for(int i=0;i<=cards.size()-1;i++){
 		    int randomI =(int)(Math.random()*52);
 		    holder = cards.get(i);
 		    cards.set(i,cards.get(randomI));
