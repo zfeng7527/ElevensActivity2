@@ -22,7 +22,6 @@ public class Deck {
      * The next card to be dealt is at size - 1.
      */
     private int size;
-    //List<String> deckList = new ArrayList<String>();
 
     /**
      * Creates a new <code>Deck</code> instance.<BR>
@@ -33,11 +32,11 @@ public class Deck {
      * @param values is an array containing all of the card point values.
      */
     public Deck(String[] ranks, String[] suits, int[] values) {
-        //List<String> deckList = new ArrayList<String>();
+        cards= new ArrayList<Card>();
         for(int rank = 0;rank<ranks.length;rank++){
             for (int suit = 0;suit<suits.length;rank++){
                 for (int value : values){
-                    cards.add(ranks[rank]+ ", " + suits[suit] + ", " + values[value]);
+                    cards.add(new Card(ranks[rank],suits[suit],values[value]));
                 }
             }
         }
