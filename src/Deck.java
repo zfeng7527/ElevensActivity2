@@ -32,15 +32,6 @@ public class Deck {
      * @param values is an array containing all of the card point values.
      */
     public Deck(String[] ranks, String[] suits, int[] values) {
-       /* cards= new ArrayList<Card>();
-        for(int rank = 0;rank<=ranks.length-1;rank++){
-            for (int suit = 0;suit<=suits.length-1;rank++){
-                for (int value = 0; value <= ranks.length-1; value++){
-                    cards.add(new Card(ranks[rank],suits[suit],values[value]));
-                }
-            }
-        }*/
-
         cards = new ArrayList<Card>();
         for (int j = 0; j < ranks.length; j++) {
             for (String suitString : suits) {
